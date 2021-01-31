@@ -1,15 +1,15 @@
 <?php
 namespace App\Domain;
 
-use App\Domain\Validator;
+use App\Domain\Validators\Validator;
 use App\Domain\Validators\VeryHighQuantityValidator;
 use App\Domain\Validators\NegativeQuantityValidator;
 
-class Quantity
+class Quantity implements ValueObjectInterface
 {
-    private float $quantity;
+    private int $quantity;
 
-    public function __construct(float $quantity)
+    public function __construct(int $quantity)
     {
         $validator = new Validator([
             new VeryHighQuantityValidator(),
@@ -18,5 +18,10 @@ class Quantity
         $validator->validate($quantity);
 
         $this->quantity = $quantity;
+    }
+
+    public function getValue(): int
+    {
+        return $this->quantity;
     }
 }

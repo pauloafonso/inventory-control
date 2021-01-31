@@ -1,7 +1,7 @@
 <?php
 namespace App\Domain;
 
-class ProductPriceQuantity
+class SaleItem
 {
     public function __construct(
         private Product $product,
@@ -23,5 +23,4 @@ class ProductPriceQuantity
     {
         return $this->quantity;
     }
-
 }

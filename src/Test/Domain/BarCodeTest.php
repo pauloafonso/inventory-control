@@ -9,20 +9,6 @@ class BarCodeTest extends TestCase
 {
     /**
      * @test
-    */
-    public function shouldNotProcessWhenThereIsNotProductIdentificationCode()
-    {
-        $product = $this->createMock(Product::class);
-        $product
-            ->method('getIdentificationCode')
-            ->willReturn(null);
-
-        $this->expectException(\DomainException::class);
-        $barCode = new BarCode($product);
-    }
-
-    /**
-     * @test
      * @dataProvider generateBarCodeDataProvider
     */
     public function generateBarCode(

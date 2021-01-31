@@ -3,17 +3,11 @@ namespace App\Domain;
 
 class BarCode
 {
-    private Product $product;
     public const PREFIX = "VA";
     public const SEPARATION_CHAR = "_";
 
-    public function __construct(Product $product)
-    {
-        if (is_null($product->getIdentificationCode())) {
-            throw new \DomainException("Is required identification code to generate barCode");
-        }
-        $this->product = $product;
-    }
+    public function __construct(private Product $product)
+    { }
 
     public function generateBarCode(\DateTime $dateTime)
     {
