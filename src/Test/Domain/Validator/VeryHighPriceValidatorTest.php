@@ -1,9 +1,9 @@
 <?php
-namespace App\Test\Domain\Validators;
+namespace App\Test\Domain\Validator;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Validators\VeryHighPriceValidator;
-use App\Domain\Validators\InvalidPriceException;
+use App\Domain\Validator\VeryHighPriceValidator;
+use App\Domain\Validator\InvalidPriceException;
 
 class VeryHighPriceValidatorTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
-namespace App\Test\Domain;
+namespace App\Test\Domain\Entity;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Price;
+use App\Domain\Entity\Price;
 
 class PriceTest extends TestCase
 {

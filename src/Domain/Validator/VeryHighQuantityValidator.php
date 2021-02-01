@@ -1,7 +1,7 @@
 <?php
-namespace App\Domain\Validators;
+namespace App\Domain\Validator;
 
-class NegativeQuantityValidator implements ValidatorInterface
+class VeryHighQuantityValidator implements ValidatorInterface
 {
     public function isValid(mixed $value): void
     {
@@ -12,10 +12,10 @@ class NegativeQuantityValidator implements ValidatorInterface
             );
         }
 
-        if ($value < 0.0) {
+        if ($value > 100000) {
             throw new InvalidQuantityException(
-                "Quantity can't be negative",
-                InvalidQuantityException::NEGATIVE_ERROR,
+                "Quantity value cannot be greater than 100.000",
+                InvalidQuantityException::VERY_HIGH_QUANTITY_ERROR
             );
         }
     }

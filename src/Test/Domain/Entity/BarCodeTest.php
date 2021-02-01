@@ -1,9 +1,9 @@
 <?php
-namespace App\Test\Domain;
+namespace App\Test\Domain\Entity;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Product;
-use App\Domain\BarCode;
+use App\Domain\Entity\Product;
+use App\Domain\Entity\BarCode;
 
 class BarCodeTest extends TestCase
 {

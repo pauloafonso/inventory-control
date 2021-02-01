@@ -1,9 +1,9 @@
 <?php
-namespace App\Test\Domain\Validators;
+namespace App\Test\Domain\Validator;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Validators\NegativeQuantityValidator;
-use App\Domain\Validators\InvalidQuantityException;
+use App\Domain\Validator\NegativeQuantityValidator;
+use App\Domain\Validator\InvalidQuantityException;
 
 class NegativeQuantityValidatorTest extends TestCase
 {

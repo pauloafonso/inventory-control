@@ -1,9 +1,9 @@
 <?php
-namespace App\Test\Domain\Validators;
+namespace App\Test\Domain\Validator;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Validators\VeryHighQuantityValidator;
-use App\Domain\Validators\InvalidQuantityException;
+use App\Domain\Validator\VeryHighQuantityValidator;
+use App\Domain\Validator\InvalidQuantityException;
 
 class VeryHighQuantityValidatorTest extends TestCase
 {

@@ -1,15 +1,15 @@
 <?php
-namespace App\Domain\Validators;
+namespace App\Domain\Validator;
 
 class Validator
 {
     public function __construct(
-        private array $validators,
+        private array $Validator,
     ) { }
 
     public function validate(mixed $value): void
     {
-        foreach ($this->validators as $validator) {
+        foreach ($this->Validator as $validator) {
             if (!$validator instanceof ValidatorInterface) {
                 throw new \Exception("Validator Class must be instance of ValidatorInterface");
             }

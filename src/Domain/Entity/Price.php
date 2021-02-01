@@ -1,9 +1,9 @@
 <?php
-namespace App\Domain;
+namespace App\Domain\Entity;
 
-use App\Domain\Validators\Validator;
-use App\Domain\Validators\VeryHighPriceValidator;
-use App\Domain\Validators\NegativePriceValidator;
+use App\Domain\Validator\Validator;
+use App\Domain\Validator\VeryHighPriceValidator;
+use App\Domain\Validator\NegativePriceValidator;
 
 class Price implements ValueObjectInterface
 {
