@@ -8,7 +8,7 @@ Training samll DDD-based applications development.
 
 soon i'll upload ;P
 
-##. organization / layers:
+## organization / layers:
 
 ### Domain Layer
 
