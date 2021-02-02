@@ -8,4 +8,5 @@ RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} \
   && apk del pcre-dev ${PHPIZE_DEPS}
 RUN wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+EXPOSE 80/tcp
+ENTRYPOINT ["php", "-S", "0.0.0.0:80", "-t", "public", "public/index.php"]
