@@ -16,7 +16,7 @@ Is represented by src/Domain directory, wich contains the Entities, Agregattes a
 
 ### Infrastructure Layer
 
-Represented, for a while, only by src/Persistence dir, wich has the database / ORM implementations. Inside this dir there is two directories: 1) Repository, wich is supposed to have the interface repository implementations (in this case, using Illuminate ORM); and 2) Models, where is suposed to be the Entities classes representing the database tables (in this implementation, I'm going to use MYSQL).
+Represented, for a while, only by src/Persistence dir, wich has the database / ORM implementations. Inside this dir there are two directories: 1) Repository, wich is supposed to have the interface repository implementations (in this case, using Illuminate ORM); and 2) Models, where is suposed to be the Entities classes representing the database tables (in this implementation, I'm going to use MYSQL).
 
 ### Application Layer:
 
