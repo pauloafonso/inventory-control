@@ -14,5 +14,6 @@ class ProductRepository implements ProductRepositoryInterface
         // $modelProduct
         //  ->setDescription($domainProduct->getDescription())
         //  ->setIdentificationCode($domainProduct->getIdentificationCode());
+        return true;
     }
 }
