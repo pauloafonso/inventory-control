@@ -1,29 +1,46 @@
 # Inventory Control Application
 
-## purpose:
+Training small DDD-based application development using PHP 8.
 
-Training small DDD-based applications development.
+## Ubiquitous language glossary
 
-## Ubiquitous language glossary, bounded-contexts, context-map:
-
-soon i'll upload ;P
+* **product**: product to be registered
+* **sale**: a product sales agreement signed, containing quantity and value of each product sold, as well as the total value and total quantity
+* **client**: customer who buys products
+* **bar code**: the barcode that will be printed and pasted on the product sold
 
 ## organization / layers:
 
 ### Domain Layer
 
-Is represented by src/Domain directory which contains the Entities, Aggregates and Value Objects (src/Domain/Entity), domain validators (src/Domain/Validators) and the Interfaces to use external services (such as the agnostic ORM implementations in the Application Layer [src/Domain/RepositoryInterface]). This layer must not depend on any other.
+Is represented by src/Domain directory which contains the Entities, Aggregate Objects, Aggregate Roots, Value Objects (src/Domain/Entity), domain validators (src/Domain/Validators) and the Interfaces to use external services (such as the agnostic ORM implementations in the Application Layer [src/Domain/RepositoryInterface]). This layer must not depend on any other.
 
 ### Infrastructure Layer
 
-Represented, for a while, only by src/Persistence dir, which has the database / ORM implementations. Inside this dir there are two directories: 1) Repository, wich is supposed to have the interface repository implementations (in this case, using Illuminate ORM); and 2) Models, where is supposed to be the Entities classes representing the database tables (in this implementation, I'm going to use MYSQL).
+Represented by src/Infrastructure directory, contains persistence, db connection, http communication and external services or libraries implementations.
+
+***Persistence sub-layer***: Contains ORM files (in this case, Illuminate Model Entities) and repository implementations to work with database and persistence.
+
+***Http comunication***: Controllers to handle with external http calls, using Slim Framework.
+
+***External services / libraries***: Soon there will be here a document printer implementation.
 
 ### Application Layer:
 
-Is the thin layer which deals with the connection between the application and UI. In this case, I'm going to develop a public HTTP API using Slim Framework.
+A thin layer which has the job of isolating the "external world" which is using this app from the domain layer, no matter how is this connection (http api, cli, etc). Its services are supposed to be oriented by the bussines use cases, therefore there is this UseCaseInterface that is implemented by the services within the dir Application.
 
 ## docker:
+```bash
+docker build -t inventory-control-image
+```
+```bash
+docker run -d --restart=unless-stopped --mount type=bind,source="$(pwd)",target=/var/www/inventory-control -p 8081:80 --name ic-container ic-image
+```
 
-`docker build -t inventory-control-image`
+***executable re-building file***
 
-`docker run -d --restart=unless-stopped --mount type=bind,source="$(pwd)",target=/var/www/inventory-control -p 8081:80 --name inventory-control-container inventory-control-server`
+in order to facilitate the docker rebuilding process, there is this sh file which can be executed:
+
+```bash
+sh rebuild-docker.sh
+```
