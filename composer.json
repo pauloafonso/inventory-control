@@ -8,6 +8,9 @@
         "phpunit/phpunit": "^9.5"
     },
     "require": {
-        "illuminate/database": "^8.25"
+        "illuminate/database": "^8.25",
+        "php-di/php-di": "^6.3",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.3"
     }
 }
