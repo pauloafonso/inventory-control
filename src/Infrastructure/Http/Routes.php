@@ -5,8 +5,17 @@ use \Slim\App;
 
 class Routes
 {
+    private static App $app;
+
     public static function create(App $app)
     {
-        $app->get('/product/{id}', Controllers\ProductController::class.":get");
+        self::$app = $app;
+
+        self::createProductRoutes();
+    }
+
+    private static function createProductRoutes()
+    {
+        self::$app->post('/product/', Controllers\SaveProductController::class);
     }
 }
