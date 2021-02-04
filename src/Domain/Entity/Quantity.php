@@ -1,9 +1,9 @@
 <?php
-namespace App\Domain\Entity;
+namespace Domain\Entity;
 
-use App\Domain\Validator\Validator;
-use App\Domain\Validator\VeryHighQuantityValidator;
-use App\Domain\Validator\NegativeQuantityValidator;
+use Domain\Validator\Validator;
+use Domain\Validator\VeryHighQuantityValidator;
+use Domain\Validator\NegativeQuantityValidator;
 
 class Quantity implements ValueObjectInterface
 {

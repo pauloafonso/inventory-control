@@ -1,5 +1,5 @@
 <?php
-namespace App\Domain\Entity;
+namespace Domain\Entity;
 
 interface ValueObjectInterface
 {

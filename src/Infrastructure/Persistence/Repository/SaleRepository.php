@@ -1,10 +1,10 @@
 <?php
-namespace App\Infrastructure\Persistence\Repository;
+namespace Infrastructure\Persistence\Repository;
 
-use App\Domain\RepositoryInterface\SaleRepositoryInterface;
-use App\Domain\Entity\Sale as DomainSale;
-use App\Infrastructure\Persistence\Models\Sale as ModelSale;
-use App\Infrastructure\Persistence\Models\SaleItem as ModelSaleItem;
+use Domain\RepositoryInterface\SaleRepositoryInterface;
+use Domain\Entity\Sale as DomainSale;
+use Infrastructure\Persistence\Models\Sale as ModelSale;
+use Infrastructure\Persistence\Models\SaleItem as ModelSaleItem;
 
 class SaleRepository implements SaleRepositoryInterface
 {

@@ -1,9 +1,9 @@
 <?php
-namespace App\Infrastructure\Persistence\Repository;
+namespace Infrastructure\Persistence\Repository;
 
-use App\Domain\RepositoryInterface\ProductRepositoryInterface;
-use App\Domain\Entity\Product as DomainProduct;
-use App\Infrastructure\Persistence\Models\Product as ModelProduct;
+use Domain\RepositoryInterface\ProductRepositoryInterface;
+use Domain\Entity\Product as DomainProduct;
+use Infrastructure\Persistence\Models\Product as ModelProduct;
 
 class ProductRepository implements ProductRepositoryInterface
 {

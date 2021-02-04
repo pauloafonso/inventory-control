@@ -1,7 +1,7 @@
 <?php
-namespace App\Domain\RepositoryInterface;
+namespace Domain\RepositoryInterface;
 
-use App\Domain\Entity\Product;
+use Domain\Entity\Product;
 
 interface ProductRepositoryInterface
 {

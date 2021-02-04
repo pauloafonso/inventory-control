@@ -1,5 +1,5 @@
 <?php
-namespace App\Domain\Validator;
+namespace Domain\Validator;
 
 class NegativePriceValidator implements ValidatorInterface
 {

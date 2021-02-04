@@ -1,8 +1,8 @@
 <?php
-namespace App\Test\Domain\Entity;
+namespace Test\Domain\Entity;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Entity\Quantity;
+use Domain\Entity\Quantity;
 
 class QuantityTest extends TestCase
 {

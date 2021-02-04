@@ -3,7 +3,7 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
-use App\Infrastructure\Http\Routes;
+use Infrastructure\Http\Routes;
 
 require './vendor/autoload.php';
 

@@ -1,8 +1,8 @@
 <?php
-namespace App\Test\Domain\Validator;
+namespace Test\Domain\Validator;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Validator\Validator;
+use Domain\Validator\Validator;
 
 class ValidatorTest extends TestCase
 {

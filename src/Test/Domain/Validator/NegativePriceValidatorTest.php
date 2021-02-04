@@ -1,9 +1,9 @@
 <?php
-namespace App\Test\Domain\Validator;
+namespace Test\Domain\Validator;
 
 use PHPUnit\Framework\TestCase;
-use App\Domain\Validator\NegativePriceValidator;
-use App\Domain\Validator\InvalidPriceException;
+use Domain\Validator\NegativePriceValidator;
+use Domain\Validator\InvalidPriceException;
 
 class NegativePriceValidatorTest extends TestCase
 {

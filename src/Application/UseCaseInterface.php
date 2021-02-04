@@ -1,5 +1,5 @@
 <?php
-namespace App\Application;
+namespace Application;
 
 interface UseCaseInterface
 { }

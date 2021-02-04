@@ -1,7 +1,10 @@
 {
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Domain\\": "src/Domain/",
+            "Infrastructure\\": "src/Infrastructure/",
+            "Application\\": "src/Application/",
+            "Test\\": "src/Test/"
         }
     },
     "require-dev": {

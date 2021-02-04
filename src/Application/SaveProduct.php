@@ -1,8 +1,8 @@
 <?php
-namespace App\Application;
+namespace Application;
 
-use App\Domain\RepositoryInterface\ProductRepositoryInterface;
-use App\Domain\Entity\Product;
+use Domain\RepositoryInterface\ProductRepositoryInterface;
+use Domain\Entity\Product;
 
 class SaveProduct implements UseCaseInterface
 {

@@ -1,5 +1,5 @@
 <?php
-namespace App\Infrastructure\Http;
+namespace Infrastructure\Http;
 
 use \Slim\App;
 

@@ -1,5 +1,5 @@
 <?php
-namespace App\Domain\Validator;
+namespace Domain\Validator;
 
 class VeryHighPriceValidator implements ValidatorInterface
 {
