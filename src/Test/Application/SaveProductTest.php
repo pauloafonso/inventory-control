@@ -6,7 +6,7 @@ use Infrastructure\Persistence\Repository\ProductRepository;
 use Application\SaveProduct;
 use Domain\Entity\Product;
 
-class TestSaveProduct extends TestCase
+class SaveProductTest extends TestCase
 {
     /**
      * @test

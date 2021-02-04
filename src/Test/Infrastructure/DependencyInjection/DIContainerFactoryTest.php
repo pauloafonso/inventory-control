@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 use \Psr\Container\ContainerInterface;
 use Infrastructure\DependencyInjection\DIContainerFactory;
 
-class TestDIContainerFactory extends TestCase
+class DIContainerFactoryTest extends TestCase
 {
     /**
      * @test
