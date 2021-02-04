@@ -4,19 +4,13 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
 use Infrastructure\Http\Routes;
+use Infrastructure\DependencyInjection\DIContainerFactory;
 
 require './vendor/autoload.php';
 
-$builder = new \DI\ContainerBuilder();
-$builder->addDefinitions([
-        'settings' => [
-            'displayErrorDetails' => true,
-        ],
-    ]);
+$dIContanierFactory = new DIContainerFactory();
 
-$container = $builder->build();
-
-AppFactory::setContainer($container);
+AppFactory::setContainer($dIContanierFactory->createDIContainer());
 $app = AppFactory::create();
 
 Routes::create($app);
