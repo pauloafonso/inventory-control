@@ -3,10 +3,11 @@ namespace Domain\Entity;
 
 class Product
 {
-    public function __construct(
-        private string $description,
-        private string $identificationCode,
-    ) { }
+    private ProductDescription $description;
+    private ProductIdentificationCode $identificationCode;
+
+    public function __construct(ProductDescription $description, ProductIdentificationCode $identificationCode)
+    { }
 
     public function getIdentificationCode(): string
     {

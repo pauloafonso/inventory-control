@@ -3,17 +3,18 @@ namespace Domain\Validator;
 
 class Validator
 {
-    public function __construct(
-        private array $Validator,
-    ) { }
+    public function __construct(private array $validator)
+    { }
 
     public function validate(mixed $value): void
     {
-        foreach ($this->Validator as $validator) {
+        foreach ($this->validator as $validator) {
             if (!$validator instanceof ValidatorInterface) {
                 throw new \Exception("Validator Class must be instance of ValidatorInterface");
             }
-            $validator->isValid($value);
+            if (!$validator->isValid($value)) {
+
+            }
         }
     }
 }

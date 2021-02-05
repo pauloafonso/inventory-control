@@ -3,24 +3,24 @@ namespace Domain\Entity;
 
 use Domain\Validator\Validator;
 use Domain\Validator\VeryHighPriceValidator;
-use Domain\Validator\NegativePriceValidator;
+use Domain\Validator\NegativeNumberValidator;
+use Domain\Core\NumberObject;
 
-class Price implements ValueObjectInterface
+class Price extends NumberObject
 {
     private float $price;
 
     public function __construct(float $price)
     {
         $validator = new Validator([
-            new VeryHighPriceValidator(),
-            new NegativePriceValidator(),
+            new VeryHighValidator(1000),
+            new NegativeValidator(),
         ]);
-        $validator->validate($price);
 
         $this->price = $price;
     }
 
-    public function getValue(): float
+    public function getValue(): mixed
     {
         return $this->price;
     }
