@@ -21,10 +21,6 @@ services:
         ports:
             - 3307:3306
         environment:
-            #MYSQL_DATABASE: inventory-control
-            #MYSQL_ROOT_PASSWORD: password
-            #MYSQL_PASSWORD: password
-            #MYSQL_USER: inventory-user
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_PASSWORD: ${DB_PASSWORD}
