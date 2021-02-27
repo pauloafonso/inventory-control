@@ -1,0 +1,35 @@
+version: "3"
+services:
+    app:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: inventory-control
+        container_name: inventory-control-server
+        restart: unless-stopped
+        working_dir: /var/www/inventory-control
+        volumes:
+            - ./:/var/www/inventory-control
+        ports:
+            - 8081:80
+    db:
+        image: mysql:5.7.15
+        env_file:
+            - .env
+        container_name: inventory-control-db
+        restart: unless-stopped
+        ports:
+            - 3307:3306
+        environment:
+            #MYSQL_DATABASE: inventory-control
+            #MYSQL_ROOT_PASSWORD: password
+            #MYSQL_PASSWORD: password
+            #MYSQL_USER: inventory-user
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes:
+            - ./docker/mysql:/var/lib/mysql
