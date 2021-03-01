@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-
+die(phpinfo());
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
@@ -13,6 +13,7 @@ $dIContanierFactory = new DIContainerFactory();
 AppFactory::setContainer($dIContanierFactory->createDIContainer());
 $app = AppFactory::create();
 
-Routes::create($app);
+$app->addBodyParsingMiddleware();
 
+Routes::create($app);
 $app->run();
