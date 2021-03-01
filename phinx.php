@@ -3,8 +3,8 @@
 return
 [
     'paths' => [
-        'migrations' => '%%PHINX_CONFIG_DIR%%/Infrastructure/DataBase/MySql/PhinxMigrations',
-        'seeds' => '%%PHINX_CONFIG_DIR%%/Infrastructure/DataBase/MySql/PhinxSeeds'
+        'migrations' => '/var/www/inventory-control/src/Infrastructure/DataBase/MySql/PhinxMigrations',
+        'seeds' => '/var/www/inventory-control/src/Infrastructure/DataBase/MySql/PhinxSeeds'
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
