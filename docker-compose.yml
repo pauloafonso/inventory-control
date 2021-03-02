@@ -5,7 +5,7 @@ services:
             context: ./
             dockerfile: Dockerfile
         image: inventory-control
-        container_name: inventory-control-server
+        container_name: ic-server
         restart: unless-stopped
         working_dir: /var/www/inventory-control
         volumes:
@@ -13,7 +13,7 @@ services:
         ports:
             - 8081:80
         environment:
-            DB_PORT: ${DB_PORT}
+            DB_CONTAINER_PORT: ${DB_CONTAINER_PORT}
             DB_DATABASE: ${DB_DATABASE}
             DB_USERNAME: ${DB_USERNAME}
             DB_PASSWORD: ${DB_PASSWORD}
@@ -22,10 +22,10 @@ services:
         image: mysql:5.7.15
         env_file:
             - .env
-        container_name: inventory-control-db
+        container_name: ic-db
         restart: unless-stopped
         ports:
-            - ${DB_PORT}:3306
+            - ${DB_HOST_PORT}:${DB_CONTAINER_PORT}
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_USER: ${DB_USERNAME}
@@ -33,3 +33,6 @@ services:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
+networks:
+    ic-network:
+        driver: bridge
