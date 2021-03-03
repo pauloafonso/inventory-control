@@ -5,5 +5,5 @@ use Domain\Entity\Product;
 
 interface ProductRepositoryInterface
 {
-    public function save(Product $product): bool;
+    public function save(Product $product): void;
 }

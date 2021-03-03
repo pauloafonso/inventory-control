@@ -2,8 +2,10 @@
 namespace Domain\Entity;
 
 use Domain\Core\StringObject;
+use Domain\Validator\Validator;
+use Domain\Validator\NotEmptyValidator;
 
-class ProductDescription extends StringObject
+class ProductDescription extends StringObject 
 {
     private string $productDescription;
 
@@ -12,11 +14,12 @@ class ProductDescription extends StringObject
         $validator = new Validator([
             new NotEmptyValidator(),
         ]);
+        $validator->validate($productDescription);
 
         $this->productDescription = $productDescription;
     }
 
-    public function getProductDescription(): string
+    public function getValue(): string
     {
         return $this->productDescription;
     }

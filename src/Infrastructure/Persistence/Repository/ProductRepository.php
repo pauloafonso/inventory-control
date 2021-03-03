@@ -7,13 +7,9 @@ use Infrastructure\Persistence\Models\Product as ModelProduct;
 
 class ProductRepository implements ProductRepositoryInterface
 {
-    public function save(DomainProduct $domainProduct): bool
+    public function save(DomainProduct $domainProduct): void
     {
-        // $modelProduct = new ModelProduct();
-
-        // $modelProduct
-        //  ->setDescription($domainProduct->getDescription())
-        //  ->setIdentificationCode($domainProduct->getIdentificationCode());
-        return true;
+        // mysql persistence
+        return;
     }
 }
